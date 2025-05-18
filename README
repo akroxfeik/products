@@ -7,3 +7,5 @@ Architecture choosen was MVVM.
 Hilt helps dealing with dependency injection.
 
 Retrofit to consume endpoint.
+
+A good improvement should be load the data progressively and create a local database.
