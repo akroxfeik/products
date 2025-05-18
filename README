@@ -1,0 +1,9 @@
+# Product List
+
+Android application built with Jetpack Compose + Hilt, following clean code guidelines.
+
+Architecture choosen was MVVM.
+
+Hilt helps dealing with dependency injection.
+
+Retrofit to consume endpoint.
