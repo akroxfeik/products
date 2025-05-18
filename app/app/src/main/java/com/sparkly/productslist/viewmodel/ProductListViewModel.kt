@@ -39,14 +39,14 @@ class ProductListViewModel @Inject constructor(
             val publishList: List<Product>
             var isConnected = networkHelper.isNetworkConnected()
 
-            val products = sharedPreferencesManager.getProductList()
-            if(products != null && products.isNotEmpty()) {
+            val products = sharedPreferencesManager.getProductList() ?: listOf()
+            if(products.isNotEmpty()) {
                 isConnected = true
                 publishList = products
             } else {
                 val response = if(isConnected) repo.getProducts() else null
                 publishList = response?.body()?.products ?: listOf()
-                sharedPreferencesManager.saveProductList(response?.body()?.products!!)
+                sharedPreferencesManager.saveProductList(publishList)
             }
 
             state = state.copy(
